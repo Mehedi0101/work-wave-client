@@ -28,9 +28,9 @@ const Navbar = () => {
 
 
     const links = <>
-        <NavLink onClick={() => { setShowUser(false); setShowMenu(false) }} to='/'>HOME</NavLink>
-        <NavLink onClick={() => { setShowUser(false); setShowMenu(false) }} to='/food-items'>FOOD ITEMS</NavLink>
-        <NavLink onClick={() => { setShowUser(false); setShowMenu(false) }} to='/blog'>BLOG</NavLink>
+        <NavLink className={({ isActive }) => isActive ? "text-lightDark font-bold" : "text-white font-bold" } onClick={() => { setShowUser(false); setShowMenu(false) }} to='/'>HOME</NavLink>
+        <NavLink className={({ isActive }) => isActive ? "text-lightDark font-bold" : "text-white font-bold" } onClick={() => { setShowUser(false); setShowMenu(false) }} to='/our-team'>OUR TEAM</NavLink>
+        <NavLink className={({ isActive }) => isActive ? "text-lightDark font-bold" : "text-white font-bold" } onClick={() => { setShowUser(false); setShowMenu(false) }} to='/support-us'>SUPPORT US</NavLink>
     </>
 
     const navbg = {
@@ -74,12 +74,12 @@ const Navbar = () => {
                                 :
                                 <Link to='/login'><button className="px-5 py-2 font-bold bg-white text-primary active:scale-95 transition-all">SIGN IN</button></Link>
                         } */}
-                        <Link to='/login'><button className="px-5 py-2 font-bold bg-primary text-white active:scale-95 transition-all">SIGN IN</button></Link>
+                        <Link to='/login'><button className="px-5 py-2 font-bold bg-white text-primary active:scale-95 transition-all">LOGIN</button></Link>
                     </div>
                 </div>
             </div>
 
-            {/* medium device */}
+            {/* small device */}
             <div className={`absolute z-10 flex gap-2 items-center justify-between lg:hidden md:px-10 px-5 py-2 text-white w-full`} style={(location.pathname) !== '/' ? navbg : {}}>
                 <div className="flex sm:gap-5 gap-2 items-center">
                     <FiMenu onClick={() => { setShowMenu(!showMenu); setShowUser(false) }} className="text-2xl cursor-pointer" />
@@ -109,7 +109,7 @@ const Navbar = () => {
                             :
                             <Link to='/login'><button className="px-5 py-2 font-bold bg-white text-sm text-primary active:scale-95 transition-all">SIGN IN</button></Link>
                     } */}
-                    <Link to='/login'><button className="px-5 py-2 font-bold bg-white text-sm text-primary active:scale-95 transition-all">SIGN IN</button></Link>
+                    <Link to='/login'><button className="px-5 py-2 font-bold bg-white text-sm text-primary active:scale-95 transition-all">LOGIN</button></Link>
                 </div >
             </div >
         </>
