@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
 import OurTeam from "../pages/OurTeam";
 import SupportUs from "../pages/SupportUs";
+import Register from "../pages/Register";
 
 const routes = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const routes = createBrowserRouter([
             {
                 path: '/support-us',
                 element: <SupportUs></SupportUs>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }
