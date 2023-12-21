@@ -10,9 +10,9 @@ const Navbar = () => {
     const location = useLocation();
 
     const links = <>
-        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'text-[#6494edd2]' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'text-primary' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/'>HOME</NavLink>
-        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'text-[#6494edd2]' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'text-primary' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/our-team'>OUR TEAM</NavLink>
-        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'text-[#6494edd2]' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'text-primary' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/support-us'>SUPPORT US</NavLink>
+        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'lg:text-[#6494edd2] text-lightDark' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'lg:text-primary text-white' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/'>HOME</NavLink>
+        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'lg:text-[#6494edd2] text-lightDark' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'lg:text-primary text-white' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/our-team'>OUR TEAM</NavLink>
+        <NavLink className={({ isActive }) => isActive ? `font-bold ${(location.pathname) !== '/' ? 'lg:text-[#6494edd2] text-lightDark' : 'text-lightDark'}` : `${(location.pathname) !== '/' ? 'lg:text-primary text-white' : 'text-white'} font-bold`} onClick={() => { setShowMenu(false) }} to='/support-us'>SUPPORT US</NavLink>
     </>
 
     return (
@@ -35,7 +35,7 @@ const Navbar = () => {
             {/* small device */}
             <div className={`absolute z-10 flex gap-2 items-center justify-between lg:hidden md:px-10 px-5 py-2 text-white w-full`}>
                 <div className="flex sm:gap-5 gap-2 items-center">
-                    <FiMenu onClick={() => { setShowMenu(!showMenu); }} className="text-2xl cursor-pointer" />
+                    <FiMenu onClick={() => { setShowMenu(!showMenu); }} className={`text-2xl cursor-pointer ${(location.pathname) !== '/' ? 'text-black' : 'text-white'}`} />
                     <Link to='/'><img className="h-14 max-w-full cursor-pointer" src={logo} alt="" /></Link>
                 </div>
                 <div className={`${showMenu ? 'flex' : 'hidden'} flex-col absolute top-16 w-fit bg-[#000000BB] px-8 py-5 rounded space-y-3 z-10 text-white list-none text-sm`}>
