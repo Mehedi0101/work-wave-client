@@ -83,7 +83,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="min-h-screen lg:pt-40 pt-28 md:px-10 px-5 max-w-screen-2xl mx-auto">
+            <div className="min-h-screen lg:pt-40 pt-20 md:px-10 max-w-screen-2xl mx-auto">
                 <div className="flex flex-row justify-between">
                     <div className="text-center hidden lg:block w-1/3 ml-auto">
                         <img className="max-h-full max-w-full" src={chef} alt="" />
