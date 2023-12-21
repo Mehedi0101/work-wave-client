@@ -63,17 +63,17 @@ const Login = () => {
     return (
         <>
             <div className="min-h-screen lg:pt-40 pt-20 md:px-10 max-w-screen-2xl mx-auto">
-                <div className="flex items-center">
+                <div className="flex flex-row justify-between">
                     <div className="text-center hidden lg:block lg:w-1/3 ml-auto">
                         <img className="max-h-full max-w-full" src={taskboard} alt="" />
                     </div>
                     <div className="pt-20 pb-10 font-primary max-w-full mx-auto">
-                        <form onSubmit={handleLogin} className="text-dark1 xl:p-14 lg:p-12 md:p-10 p-8 border border-dark3 rounded text-sm md:text-base max-w-[90%] mx-auto bg-slate-100">
+                        <form onSubmit={handleLogin} className="text-dark1 xl:p-14 lg:p-12 md:p-10 p-8 border rounded text-sm md:text-base max-w-[90%] mx-auto bg-slate-100">
                             <h2 className="font-bold text-3xl md:text-4xl mb-10 font-secondary">Login</h2>
-                            <input className="outline-none border-b-2 border-dark3 font-medium placeholder:text-dark2 placeholder:font-medium py-1 max-w-full w-[400px] mb-8 bg-transparent" type="email" name="email" id="email" placeholder="Email" required />
+                            <input className="outline-none border-b-2 font-medium placeholder:font-medium py-1 max-w-full w-[400px] mb-8 bg-transparent" type="email" name="email" id="email" placeholder="Email" required />
                             <br />
                             <div className="mb-8 relative">
-                                <input className="outline-none border-b-2 border-dark3 font-medium placeholder:text-dark2 placeholder:font-medium py-1 max-w-full w-[400px] bg-transparent" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
+                                <input className="outline-none border-b-2 font-medium placeholder:font-medium py-1 max-w-full w-[400px] bg-transparent" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
                                 {
                                     showPassword ? <AiOutlineEyeInvisible onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
                                 }

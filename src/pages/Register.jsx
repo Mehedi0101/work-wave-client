@@ -89,16 +89,16 @@ const Register = () => {
                         <img className="max-h-full max-w-full" src={chef} alt="" />
                     </div>
                     <div className="pt-20 pb-10 font-primary max-w-full mx-auto">
-                        <form onSubmit={handleRegister} className="text-dark1 xl:p-14 lg:p-12 md:p-10 p-8 border border-dark3 rounded text-sm md:text-base max-w-[90%] mx-auto">
+                        <form onSubmit={handleRegister} className="text-dark1 xl:p-14 lg:p-12 md:p-10 p-8 border rounded text-sm md:text-base max-w-[90%] mx-auto">
                             <h2 className="font-bold text-3xl md:text-4xl mb-10 font-secondary">Register</h2>
-                            <input className="outline-none border-b-2 border-dark3 font-medium placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="name" id="name" placeholder="Name" required />
+                            <input className="outline-none border-b-2 font-medium placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="text" name="name" id="name" placeholder="Name" required />
                             <br />
-                            <input className="outline-none border-b-2 border-dark3 font-medium placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Email" required />
+                            <input className="outline-none border-b-2 font-medium placeholder:font-medium py-1 max-w-full w-[400px] mb-8" type="email" name="email" id="email" placeholder="Email" required />
                             {
                                 alreadyExistError && <p className="text-red-500 text-xs -mt-8 max-w-full w-[400px]">Email is already in use</p>
                             }
                             <div className="mb-8 relative">
-                                <input className="outline-none border-b-2 border-dark3 font-medium placeholder:font-medium py-1 max-w-full w-[400px]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
+                                <input className="outline-none border-b-2 font-medium placeholder:font-medium py-1 max-w-full w-[400px]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" required />
                                 {
                                     showPassword ? <AiOutlineEyeInvisible onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" /> : <AiOutlineEye onClick={() => setShowPassword(!showPassword)} className="absolute top-[20%] right-2 text-2xl cursor-pointer" />
                                 }
