@@ -5,6 +5,7 @@ import OurTeam from "../pages/OurTeam";
 import SupportUs from "../pages/SupportUs";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Dashboard from "../layouts/Dashboard";
 
 const routes = createBrowserRouter([
     {
@@ -30,6 +31,15 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+
             }
         ]
     }
