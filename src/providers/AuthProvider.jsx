@@ -45,17 +45,12 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    const logout = () => {
-        setLoading(true);
-        return signOut(auth);
-    }
-
     const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
-    const authInfo = { currentUser, signUpEmailPassword, loginEmailPassword, logoutUser, loading, googleLogin, setLoading, setGoogleLoginAttempt, logout };
+    const authInfo = { currentUser, signUpEmailPassword, loginEmailPassword, logoutUser, loading, googleLogin, setLoading, setGoogleLoginAttempt };
 
     return (
         <AuthContext.Provider value={authInfo}>

@@ -3,8 +3,24 @@ import { FaClipboardList, FaFileSignature } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../../assets/workwave-logo-white.png";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Sidebar = () => {
+    const { logoutUser } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        const toastId = toast.loading('Signing out...');
+        logoutUser()
+            .then(() => {
+                toast.success('Signed out successfully', { id: toastId });
+            })
+            .catch(() => {
+                toast.error('Something went wrong', { id: toastId });
+            })
+    }
+
     return (
         <div className="bg-[#2b487c] min-h-screen fixed top-0 px-5 xl:max-w-[240px] max-w-[190px] w-full flex flex-col items-center justify-center gap-5">
 
@@ -46,7 +62,7 @@ const Sidebar = () => {
             </NavLink>
 
             {/* logout */}
-            <NavLink to="/"
+            <NavLink to="/" onClick={handleLogout}
                 className={({ isActive }) =>
                     isActive ? "text-primary font-medium flex items-center border border-primary rounded-md" : "text-white font-medium flex items-center border border-primary rounded-md transition-colors"
                 }
