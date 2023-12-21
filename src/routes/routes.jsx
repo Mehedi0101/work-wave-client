@@ -6,6 +6,10 @@ import SupportUs from "../pages/SupportUs";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Dashboard from "../layouts/Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import MyProfile from "../pages/MyProfile";
+import TaskList from "../pages/TaskList";
+import AddTask from "../pages/AddTask";
 
 const routes = createBrowserRouter([
     {
@@ -35,11 +39,20 @@ const routes = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        path: '/dashboard/',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
-
+                path: '/dashboard/my-profile',
+                element: <MyProfile></MyProfile>
+            },
+            {
+                path: '/dashboard/task-list',
+                element: <TaskList></TaskList>
+            },
+            {
+                path: '/dashboard/add-task',
+                element: <AddTask></AddTask>
             }
         ]
     }
