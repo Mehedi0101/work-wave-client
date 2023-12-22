@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../pages/MyProfile";
 import TaskList from "../pages/TaskList";
 import AddTask from "../pages/AddTask";
+import UpdateTask from "../pages/UpdateTask";
 
 const routes = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard/add-task',
                 element: <AddTask></AddTask>
+            },
+            {
+                path: '/dashboard/update-task/:id',
+                element: <UpdateTask></UpdateTask>
             }
         ]
     }
