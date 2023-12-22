@@ -12,7 +12,7 @@ const Footer = () => {
                 </aside>
                 <nav>
                     <header className="footer-title">Contact Us</header>
-                    <p className="grid grid-flow-col gap-4">42/B, Willow Lane (3rd floor) <br />Riverside Heights, Cityville-56789 <br />Phone: +88019110133923</p>
+                    <p className="grid grid-flow-col gap-4">Email: mehedi29121998@gmail.com <br />Phone: +8801521773589</p>
 
                     <header className="footer-title mt-5">Social</header>
                     <div className="grid grid-flow-col gap-4">
