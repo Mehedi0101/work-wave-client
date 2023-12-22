@@ -36,13 +36,16 @@ const Task = ({ task, idx }) => {
 
     return (
         <div ref={drag} className={`py-1 mb-2 text-white bg-[#0000004f] cursor-grab ${isDragging ? 'opacity-50 cursor-grabbing' : 'opacity-100'} transition-all`}>
-            <div className="px-2 font-medium flex flex-wrap gap-x-3 gap-y-1 items-center">
-                <div>{idx + 1}.</div>
-                <div>{title}</div>
-                <div>{deadline}</div>
-                <div className={`px-2 py-1 text-xs font-bold ${priority === 'high' ? 'bg-red-400' : ''} ${priority === 'moderate' ? 'bg-orange-400' : ''} ${priority === 'low' ? 'bg-green-400' : ''}`}>{priority}</div>
-                <Link to={`/dashboard/update-task/${_id}`}><div className="cursor-pointer"><FaRegPenToSquare className="text-sm" /></div></Link>
-                <div className="cursor-pointer" onClick={() => handleDelete(_id)}><FaTrashAlt className="text-sm" /></div>
+            <div className="px-2 py-1 font-medium flex flex-col gap-y-1">
+                <div>
+                    <div>{idx + 1}. {title}</div>
+                </div>
+                <div className="flex flex-wrap gap-x-3 gap-y-1 items-center">
+                    <div className={`px-2 py-1 text-xs font-bold ${priority === 'high' ? 'bg-red-400' : ''} ${priority === 'moderate' ? 'bg-orange-400' : ''} ${priority === 'low' ? 'bg-green-400' : ''}`}>{priority}</div>
+                    <div>{deadline}</div>
+                    <Link to={`/dashboard/update-task/${_id}`}><div className="cursor-pointer"><FaRegPenToSquare className="text-sm" /></div></Link>
+                    <div className="cursor-pointer" onClick={() => handleDelete(_id)}><FaTrashAlt className="text-sm" /></div>
+                </div>
             </div>
         </div>
     );
