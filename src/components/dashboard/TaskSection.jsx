@@ -25,9 +25,9 @@ const TaskSection = ({ type }) => {
                     toast.success('List updated', { id: toastId });
                     refetch();
                 }
-                else {
-                    toast.error('Something went wrong', { id: toastId });
-                }
+            })
+            .catch(() => {
+                toast.error('Something went wrong', { id: toastId });
             })
     }
 
