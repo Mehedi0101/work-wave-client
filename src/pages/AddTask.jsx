@@ -18,7 +18,8 @@ const AddTask = () => {
             title: data.title,
             deadline: data.deadline,
             priority: data.priority,
-            details: data.details
+            details: data.details,
+            status: 'todo'
         }
 
         const addRecipeResponse = await axiosPublic.post('/tasks', newTask);
