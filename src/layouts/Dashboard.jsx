@@ -11,7 +11,7 @@ const Dashboard = () => {
             <div className="block md:hidden">
                 <Drawer></Drawer>
             </div>
-            <div className="w-full md:w-5/6">
+            <div className="w-full md:w-5/6 md:px-10">
                 <Outlet></Outlet>
             </div>
         </div>
