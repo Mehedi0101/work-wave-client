@@ -15,6 +15,9 @@ const TaskSection = ({ type }) => {
         if (tasks.length > 0) {
             setSectionTasks(tasks.filter(task => task.status === type))
         }
+        else {
+            setSectionTasks([]);
+        }
     }, [setSectionTasks, tasks, type])
 
     const addToThisSection = id => {
