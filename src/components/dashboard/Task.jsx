@@ -5,6 +5,7 @@ import { FaRegPenToSquare } from "react-icons/fa6";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 import useGetTasks from "../../hooks/useGetTasks";
+import { Link } from "react-router-dom";
 
 const Task = ({ task, idx }) => {
     const { refetch } = useGetTasks();
@@ -40,7 +41,7 @@ const Task = ({ task, idx }) => {
                 <div>{title}</div>
                 <div>{deadline}</div>
                 <div className={`px-2 py-1 text-xs font-bold ${priority === 'high' ? 'bg-red-400' : ''} ${priority === 'moderate' ? 'bg-orange-400' : ''} ${priority === 'low' ? 'bg-green-400' : ''}`}>{priority}</div>
-                <div className="cursor-pointer"><FaRegPenToSquare className="text-sm" /></div>
+                <Link to={`/dashboard/update-task/${_id}`}><div className="cursor-pointer"><FaRegPenToSquare className="text-sm" /></div></Link>
                 <div className="cursor-pointer" onClick={() => handleDelete(_id)}><FaTrashAlt className="text-sm" /></div>
             </div>
         </div>
