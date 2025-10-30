@@ -8,14 +8,20 @@ const UpdateTask = () => {
     const { id: taskId } = useParams();
     const axiosPublic = useAxiosPublic();
     const [previousValues, setPreviousValues] = useState({});
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
     const navigate = useNavigate();
 
     useEffect(() => {
-        axiosPublic.get(`/tasks/${taskId}`)
-            .then(res => setPreviousValues(res.data))
-    }, [axiosPublic, taskId])
-    console.log(previousValues);
+        axiosPublic.get(`/tasks/${taskId}`).then(res => {
+            const data = res.data;
+            setPreviousValues(data);
+
+            setValue("title", data.title);
+            setValue("deadline", data.deadline);
+            setValue("priority", data.priority);
+            setValue("details", data.details);
+        });
+    }, [axiosPublic, taskId, setValue]);
 
     const onSubmit = async (data) => {
 

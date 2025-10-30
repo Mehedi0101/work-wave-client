@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'https://work-wave-server-psi.vercel.app'
+    baseURL: 'https://work-wave-server-alpha.vercel.app/'
 })
 
 const useAxiosPublic = () => {

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import auth from "../components/configs/firebase.config";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
@@ -11,12 +11,11 @@ import chef from "../assets/taskboard.jpg";
 
 const Register = () => {
     document.title = "REGISTER";
-    const { signUpEmailPassword, logout, googleLogin, setLoading, setGoogleLoginAttempt } = useContext(AuthContext);
+    const { signUpEmailPassword, logoutUser, googleLogin, setLoading, setGoogleLoginAttempt } = useContext(AuthContext);
     const navigate = useNavigate();
     const [passwordError, setPasswordError] = useState('');
     const [alreadyExistError, setAlreadyExistError] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const { state } = useLocation();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -53,14 +52,14 @@ const Register = () => {
                     .then(() => { })
                     .catch(() => { })
 
-                logout()
+                logoutUser()
                     .then(() => {
                         navigate('/login');
                     })
             })
 
             .catch(error => {
-                toast.error('Sign in failed', { id: toastId });
+                toast.error('Sign Up failed', { id: toastId });
                 error.code === 'auth/email-already-in-use' && setAlreadyExistError(true);
             })
     }
@@ -71,7 +70,7 @@ const Register = () => {
         googleLogin()
             .then(() => {
                 setGoogleLoginAttempt(true);
-                navigate(state || '/');
+                navigate('/dashboard/my-profile');
                 toast.success('Signed in successfully', { id: toastId });
             })
             .catch(() => {

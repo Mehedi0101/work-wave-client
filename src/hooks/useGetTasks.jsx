@@ -17,7 +17,8 @@ const useGetTasks = () => {
             else {
                 return [];
             }
-        }
+        },
+        enabled: !!currentUser?.email
     })
     return { tasks, refetch };
 };

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
@@ -14,9 +14,6 @@ const Login = () => {
     const { loginEmailPassword, googleLogin, setLoading, setGoogleLoginAttempt } = useContext(AuthContext);
     const [credentialsError, setCredentialsError] = useState(false);
     const navigate = useNavigate();
-
-
-    const { state } = useLocation();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -33,7 +30,7 @@ const Login = () => {
                 // axios.post('https://chefs-domain-server.vercel.app/jwt', { email }, { withCredentials: true })
                 //     .then(() => { })
                 toast.success('Signed in successfully', { id: toastId });
-                navigate(state || '/');
+                navigate('/dashboard/my-profile');
             })
 
             .catch(() => {
@@ -49,7 +46,7 @@ const Login = () => {
         googleLogin()
             .then(() => {
                 setGoogleLoginAttempt(true);
-                navigate(state || '/');
+                navigate('/dashboard/my-profile');
                 toast.success('Signed in successfully', { id: toastId });
             })
             .catch(() => {
